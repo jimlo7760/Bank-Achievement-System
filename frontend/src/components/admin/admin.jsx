@@ -1,3 +1,5 @@
+import '../../App.css';
+
 import DataTable from './data_table';
 import { useEffect, useState } from 'react';
 
@@ -16,12 +18,12 @@ function Admin() {
     return (
         <main className='flex_center'>
             <section>
-                <h1 className="title">Manager</h1>
+                <h1 className="title">Manager Page</h1>
                 <br></br>
                 <DataTable />
-            </section>
+            </section>     
         </main>
-
+        
     );
 }
 

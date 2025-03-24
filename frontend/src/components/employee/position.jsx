@@ -19,19 +19,14 @@ function Position(props) {
     return ( 
         <Box sx={{ minWidth: props.minwidth }}>
             <FormControl fullWidth>
-                <InputLabel>Branchs</InputLabel>
+                <InputLabel>Branch</InputLabel>
                 <Select
                 value={position}
                 label="position"
                 onChange={handleChange}
                 >
                     <MenuItem value={'Troy'}>Troy</MenuItem>
-                    <MenuItem value={'SouthTroy'}>South Troy</MenuItem>
-                    <MenuItem value={'GreenIsland'}>Green Island</MenuItem>
-                    <MenuItem value={'Colonie'}>Colonie</MenuItem>
-                    <MenuItem value={'Latham'}>Latham</MenuItem>
                     <MenuItem value={'Albany'}>Albany</MenuItem>
-       
                 </Select>
             </FormControl>
         </Box>

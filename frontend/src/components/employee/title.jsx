@@ -24,8 +24,8 @@ function Title(props) {
                 label="title"
                 onChange={handleChange}
                 >
-                    <MenuItem value={'teller'}>Teller</MenuItem>
-                    <MenuItem value={'manager'}>Manager</MenuItem>
+                    <MenuItem value={'ClientManager'}>Client Manager</MenuItem>
+                    <MenuItem value={'CustomerServiceManager'}>Customer Service Manager</MenuItem>
                 </Select>
             </FormControl>
         </Box>
@@ -33,6 +33,3 @@ function Title(props) {
 }
 
 export default Title;
-
-
-

@@ -119,42 +119,130 @@ function SignIn(props) {
 
     return (
         <>
-            <h1 className='title'>Bank Achievement System</h1>
+            <h1 className='title'>Welcome to Metrics</h1>
             <MDBContainer className="p-3 mt-3 d-flex flex-column">
 
             <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>
-                <MDBTabsItem>
+                <MDBTabsItem className = 'switch-tab'>
                 <MDBTabsLink onClick={() => handleJustifyClick('login')} active={justifyActive === 'login'}>
                     Log In
                 </MDBTabsLink>
                 </MDBTabsItem>
-                <MDBTabsItem>
+                <MDBTabsItem className = 'switch-tab'>
                     <MDBTabsLink onClick={() => handleJustifyClick('signup')} active={justifyActive === 'signup'}>
                         Sign Up
                     </MDBTabsLink>
                 </MDBTabsItem>
-            </MDBTabs>
+            </MDBTabs> 
+
+
+
             </MDBContainer>
             <section style={
                 {display: justifyActive === 'login' ? 'block' : 'none'}
             }>
                 <MDBContainer className="p-3 d-flex flex-column">
 
-                    <MDBInput wrapperClass='mb-4' label='User Name' id='login_username' type='email' value={loginUsername} onChange={(e) => setLoginUsername(e.target.value)}/>
-                    <MDBInput wrapperClass='mb-4' label='Password' id='login_password' type='password' value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)}/>
+                    {/* <MDBInput wrapperClass='mb-4' label='User Name' id='login_username' type='email' value={loginUsername} onChange={(e) => setLoginUsername(e.target.value)}/>
+                    <MDBInput wrapperClass='mb-4' label='Password' id='login_password' type='password' value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)}/> */}
 
-                    <MDBBtn className="mb-4" onClick={handleLogin}>Log In</MDBBtn>
+                <div className="styled_input_wrapper">
+                    <label className="styled_label" htmlFor="login_username">User Name</label>
+                    <input
+                        id='login_username' 
+                        type='email' 
+                        value={loginUsername} 
+                        onChange={(e) => setLoginUsername(e.target.value)}
+                        className="styled_input"
+                    />
+                    {loginUsername && (
+                        <span className="clear_btn" onClick={() => setLoginUsername('')}>
+                          x
+                        </span>
+                    )}
+                </div>
+
+                <div className="styled_input_wrapper">
+                    <label className="styled_label" htmlFor="login_password">Password</label>
+                    <input
+                        id='login_password' 
+                        type='password' 
+                        value={loginPassword} 
+                        onChange={(e) => setLoginPassword(e.target.value)}
+                        className="styled_input"
+                    />
+                    {loginPassword && (
+                        <span className="clear_btn" onClick={() => setLoginPassword('')}>
+                        x
+                        </span>
+                    )}
+                </div>
+
+                    <MDBBtn className="main_button" onClick={handleLogin}>Log In</MDBBtn>
 
                 </MDBContainer>
             </section>
+
+            
             <section style={
                 {display: justifyActive === 'signup' ? 'block' : 'none'}
             }>
                 <MDBContainer className="p-3 d-flex flex-column">
 
-                    <MDBInput wrapperClass='mb-4' label='User Name' id='signup_username' type='email' value={signupUsername} onChange={(e) => setSignupUsername(e.target.value)}/>
+                    {/* <MDBInput wrapperClass='mb-4' label='User Name' id='signup_username' type='email' value={signupUsername} onChange={(e) => setSignupUsername(e.target.value)}/>
                     <MDBInput wrapperClass='mb-4' label='Password' id='signup_password' type='password' value={signupPassword} onChange={(e) => setSignupPassword(e.target.value)}/>
-                    <MDBInput wrapperClass='mb-4' label='Confirm Password' id='signup_confirm_password' type='password' value={signupPasswordConfirm} onChange={(e) => setSignupPasswordConfirm(e.target.value)}/>
+                    <MDBInput wrapperClass='mb-4' label='Confirm Password' id='signup_confirm_password' type='password' value={signupPasswordConfirm} onChange={(e) => setSignupPasswordConfirm(e.target.value)}/> */}
+                    
+
+                <div className="styled_input_wrapper">
+                <label htmlFor="signup_username" className="styled_label">User Name</label>
+                <input
+                    id="signup_username"
+                    type="email"
+                    value={signupUsername}
+                    onChange={(e) => setSignupUsername(e.target.value)}
+                    className="styled_input"
+                />
+                {signupUsername && (
+                    <span className="clear_btn" onClick={() => setSignupUsername('')}>
+                    x
+                    </span>
+                )}
+                </div>
+
+                <div className="styled_input_wrapper">
+                <label htmlFor="signup_password" className="styled_label">Password</label>
+                <input
+                    id="signup_password"
+                    type="password"
+                    value={signupPassword}
+                    onChange={(e) => setSignupPassword(e.target.value)}
+                    className="styled_input"
+                />
+                {signupPassword && (
+                    <span className="clear_btn" onClick={() => setSignupPassword('')}>
+                    x
+                    </span>
+                )}
+                </div>
+
+                <div className="styled_input_wrapper">
+                <label htmlFor="signup_confirm_password" className="styled_label">Confirm Password</label>
+                <input
+                    id="signup_confirm_password"
+                    type="password"
+                    value={signupPasswordConfirm}
+                    onChange={(e) => setSignupPasswordConfirm(e.target.value)}
+                    className="styled_input"
+                />
+                {signupPasswordConfirm && (
+                    <span className="clear_btn" onClick={() => setSignupPasswordConfirm('')}>
+                    x
+                    </span>
+                )}
+                </div>
+
+
                     <div className='alert_popup' style={
                         {display: signupPassword !== signupPasswordConfirm &&  signupPasswordConfirm !== '' ? 'block' : 'none'}
                     }>
@@ -167,7 +255,7 @@ function SignIn(props) {
                     <GeneralQuestionFrame question='Branch:' input={<Position position={position} onPositionChange={setPosition} minwidth={minwidth}/>}/>
                     <GeneralQuestionFrame question='Title' input={<Title title={title} onTitleChange={setTitle} minwidth={minwidth}/>}/>
                     <br></br>
-                    <MDBBtn className="mb-4" onClick={handleRegister}>Sign Up</MDBBtn>
+                    <MDBBtn className="main_button" onClick={handleRegister}>Sign Up</MDBBtn>
                 </MDBContainer>
             </section>
         </>

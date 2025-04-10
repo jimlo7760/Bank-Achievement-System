@@ -27,7 +27,7 @@ function DataTable(props) {
 
     const [rows, setRows] = useState([]);
     useEffect(() => {
-        axios.get('https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/data?min_date=' + min_date.format('YYYY-MM-DD') + '&max_date=' + max_date.format('YYYY-MM-DD'), {
+        axios.get('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//data?min_date=' + min_date.format('YYYY-MM-DD') + '&max_date=' + max_date.format('YYYY-MM-DD'), {
             withCredentials: true
         }).then((response) => {
             if (response.data.result === "OK") {

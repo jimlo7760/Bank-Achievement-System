@@ -31,7 +31,7 @@ function SignIn(props) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/checkcookie', {
+        axios.get('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//checkcookie', {
             withCredentials: true
         }).then((response) => {
             if (response.data.result === "OK") {
@@ -48,7 +48,7 @@ function SignIn(props) {
 
     const handleLogin = () => {
         console.log('login');
-        axios.post('https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/login', {
+        axios.post('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//login', {
             username: loginUsername,
             password: loginPassword
         }, 
@@ -78,7 +78,7 @@ function SignIn(props) {
 
     const handleRegister = () => {
         console.log('register');
-        axios.post('https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/register', {
+        axios.post('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//register', {
             username: signupUsername,
             password: signupPassword,
             position: position,

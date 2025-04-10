@@ -64,7 +64,7 @@ function Employee() {
 
     useEffect(() => {  // get user info
         console.log('employee page');
-        axios.get('https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/user', {
+        axios.get('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//user', {
             withCredentials: true
         }).then((response) => {
             console.log('trying to get user info');
@@ -81,7 +81,7 @@ function Employee() {
     const handleSubmit = async () => {
         console.log('submit');
         if (!checkbox) {
-            var check_data = await axios.post('https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/data/check', {
+            var check_data = await axios.post('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//data/check', {
                 date: date,
                 name: name,
                 position: position,
@@ -103,7 +103,7 @@ function Employee() {
                 return;
             }
         }
-        axios.post('https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/data', {
+        axios.post('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//data', {
             date: date,
             name: name,
             position: position,

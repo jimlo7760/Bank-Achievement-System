@@ -4,7 +4,7 @@ A web-based achievement system for banking activities that gamifies financial ta
 
 ## Live Demo
 
-[Bank Achievement System](https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/)
+[Bank Achievement System](https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//)
 
 ## Repository
 
@@ -100,7 +100,7 @@ The application provides several API endpoints for various functionalities:
 
 ## Deployment
 
-The application is deployed on Microsoft Azure at [https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/](https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/)
+The application is deployed on Microsoft Azure at [https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//](https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//)
 
 **Note**: Since we store cookie and session once you login. Please try to use incognito mode or clear your browser cache if you want to login another user or test different accounts. 
 

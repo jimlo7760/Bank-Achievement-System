@@ -192,8 +192,106 @@ function SignIn(props) {
                     {/* <MDBInput wrapperClass='mb-4' label='User Name' id='signup_username' type='email' value={signupUsername} onChange={(e) => setSignupUsername(e.target.value)}/>
                     <MDBInput wrapperClass='mb-4' label='Password' id='signup_password' type='password' value={signupPassword} onChange={(e) => setSignupPassword(e.target.value)}/>
                     <MDBInput wrapperClass='mb-4' label='Confirm Password' id='signup_confirm_password' type='password' value={signupPasswordConfirm} onChange={(e) => setSignupPasswordConfirm(e.target.value)}/> */}
-                    
+                <div className="signup_grid">
+               
+                <div className="signup_left">
+                    <div className="styled_input_wrapper">
+                    <label htmlFor="signup_username" className="styled_label">User Name</label>
+                    <input
+                        id="signup_username"
+                        type="email"
+                        value={signupUsername}
+                        onChange={(e) => setSignupUsername(e.target.value)}
+                        className="styled_input"
+                    />
+                    {signupUsername && (
+                        <span className="clear_btn" onClick={() => setSignupUsername('')}>
+                        x
+                        </span>
+                    )}
+                    </div>
 
+                    <div className="styled_input_wrapper">
+                    <label htmlFor="signup_password" className="styled_label">Password</label>
+                    <input
+                        id="signup_password"
+                        type="password"
+                        value={signupPassword}
+                        onChange={(e) => setSignupPassword(e.target.value)}
+                        className="styled_input"
+                    />
+                    {signupPassword && (
+                        <span className="clear_btn" onClick={() => setSignupPassword('')}>
+                        x
+                        </span>
+                    )}
+                    </div>
+
+                    <div className="styled_input_wrapper">
+                    <label htmlFor="signup_confirm_password" className="styled_label">Confirm Password</label>
+                    <input
+                        id="signup_confirm_password"
+                        type="password"
+                        value={signupPasswordConfirm}
+                        onChange={(e) => setSignupPasswordConfirm(e.target.value)}
+                        className="styled_input"
+                    />
+                    {signupPasswordConfirm && (
+                        <span className="clear_btn" onClick={() => setSignupPasswordConfirm('')}>
+                        x
+                        </span>
+                    )}
+                    </div>
+                </div>
+
+            
+                <div className="signup_right">
+                <div className="styled_input_wrapper">
+                    <label className="styled_label" htmlFor="position_select">Branch</label>
+                    <select
+                        id="position_select"
+                        value={position}
+                        onChange={(e) => setPosition(e.target.value)}
+                        className="styled_input"
+                    >
+                        <option value="">Select Branch</option>
+                        <option value="Albany">Albany</option>
+                        <option value="Troy">Troy</option>
+                        <option value="NYC">NYC</option>
+                    </select>
+                    </div>
+
+                    <div className="styled_input_wrapper">
+                    <label className="styled_label" htmlFor="title_select">Title</label>
+                    <select
+                        id="title_select"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        className="styled_input"
+                    >
+                        <option value="">Select Title</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Teller">Teller</option>
+                        <option value="Clerk">Clerk</option>
+                    </select>
+                    </div>
+
+                </div>
+                </div>
+
+                
+                <div className='alert_popup' style={{ display: signupPassword !== signupPasswordConfirm && signupPasswordConfirm !== '' ? 'block' : 'none' }}>
+                <div className='alert alert-danger' role='alert' style={{
+                    color: 'red', fontSize: 'small', padding: '0.5rem', margin: '0', textAlign: 'center',
+                    width: '100%', height: '100%', borderRadius: '0.25rem', border: '1px solid transparent',
+                    backgroundColor: 'rgba(255, 0, 0, 0.1)'
+                }}>
+                    Password and confirm password not Match!
+                </div>
+                </div>
+
+                    
+{/* 
                 <div className="styled_input_wrapper">
                 <label htmlFor="signup_username" className="styled_label">User Name</label>
                 <input
@@ -254,8 +352,12 @@ function SignIn(props) {
                     </div>
                     <GeneralQuestionFrame question='Branch:' input={<Position position={position} onPositionChange={setPosition} minwidth={minwidth}/>}/>
                     <GeneralQuestionFrame question='Title' input={<Title title={title} onTitleChange={setTitle} minwidth={minwidth}/>}/>
-                    <br></br>
-                    <MDBBtn className="main_button" onClick={handleRegister}>Sign Up</MDBBtn>
+                    <br></br> */}
+                    {/* <MDBBtn className="main_button" onClick={handleRegister}>Sign Up</MDBBtn> */}
+                    <div className="signup_btn_container">
+                        <button className="main_button signup_btn" onClick={handleRegister}>Register</button>
+                    </div>
+
                 </MDBContainer>
             </section>
         </>

@@ -21,9 +21,24 @@ function Position(props) {
             <FormControl fullWidth>
                 <InputLabel>Branch</InputLabel>
                 <Select
+                labelId="branch-label"
+                label="Branch"
                 value={position}
-                label="position"
                 onChange={handleChange}
+                fullWidth
+                sx={{
+                  borderRadius: '10px',
+                  '& .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#6750A4',
+                    borderWidth: '2px',
+                  },
+                  '&:hover .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#4f3c90',
+                  },
+                  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#4f3c90',
+                  },
+                }}
                 >
                     <MenuItem value={'Troy'}>Troy</MenuItem>
                     <MenuItem value={'Albany'}>Albany</MenuItem>

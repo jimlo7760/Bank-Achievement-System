@@ -18,7 +18,35 @@ function SubmitDate(props) {
 
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker defaultValue={date} onChange={handleDateChange} sx={{minWidth: props.minwidth}}/>
+            <DatePicker defaultValue={date} onChange={handleDateChange} //sx={{minWidth: props.minwidth}}
+            slotProps={{
+                textField: {
+                  fullWidth: true,
+                  sx: {
+                    minWidth: props.minwidth,
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: '10px',
+                      '& fieldset': {
+                        borderColor: '#6750A4',
+                        borderWidth: '2px',
+                      },
+                      '&:hover fieldset': {
+                        borderColor: '#4f3c90',
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#4f3c90',
+                      },
+                    },
+                    '& .MuiInputLabel-root': {
+                      color: '#6750A4',
+                    },
+                    '& .MuiInputLabel-root.Mui-focused': {
+                      color: '#4f3c90',
+                    },
+                  },
+                }
+              }}
+            />
         </LocalizationProvider>
     );
 }

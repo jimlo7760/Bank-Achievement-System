@@ -23,6 +23,25 @@ function SubmitName(props) {
                 label="Name"
                 value={name}
                 onChange={handleSubmit}
+                fullWidth
+                sx={{
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: '10px',
+                      '& fieldset': {
+                        borderColor: '#6750A4',
+                        borderWidth: '2px',
+                      },
+                      '&:hover fieldset': {
+                        borderColor: '#4f3c90',
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#4f3c90',
+                      },
+                    },
+                    '& .MuiInputLabel-root.Mui-focused': {
+                      color: '#4f3c90',
+                    },
+                  }}
             />
         </Box>
      );

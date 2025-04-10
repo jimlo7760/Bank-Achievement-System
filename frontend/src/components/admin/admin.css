@@ -1,0 +1,29 @@
+/* 修改 column panel 内部颜色为紫色 */
+.MuiDataGrid-panel .MuiInputLabel-root {
+    color: #4f3c90;
+  }
+  
+  .MuiDataGrid-panel .MuiInputBase-root {
+    color: #4f3c90;
+  }
+  
+  .MuiDataGrid-panel .MuiInput-underline:before {
+    border-bottom: 1px solid #4f3c90;
+  }
+  .MuiDataGrid-panel .MuiInput-underline:after {
+    border-bottom: 2px solid #4f3c90;
+  }
+  
+  /* 修改 switch 的颜色 */
+  .MuiDataGrid-panel .MuiSwitch-switchBase.Mui-checked {
+    color: #4f3c90;
+  }
+  .MuiDataGrid-panel .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+    background-color: #b89de9;
+  }
+  
+  /* 修改 HIDE ALL 和 SHOW ALL */
+  .MuiDataGrid-panel .MuiButtonBase-root {
+    color: #4f3c90;
+  }
+  

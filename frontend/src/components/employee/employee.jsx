@@ -3,6 +3,7 @@ import '../../App.css';
 import Button from '@mui/material/Button';
 import ConfirmBox from './confirmbox';
 import axios from 'axios';
+import './element.css';
 
 import GeneralQuestionFrame from './general_question_frame';
 import AchievementQuestionFrame from './achievement_question_frame';
@@ -140,7 +141,7 @@ function Employee() {
         });
     };
 
-    return (
+    // return (
         <main className='d-flex flex_center'>
             <section className='w_25' style={{display: window_width > 800 ? 'block' : 'none'}}></section>
             <section className={window_width > 800 ? 'w-50' : 'w-100'}>
@@ -181,7 +182,52 @@ function Employee() {
             </section>
             <section className='w_25' style={{display: window_width > 800 ? 'block' : 'none'}}></section>
         </main>
-    );
+    // );
+    return (
+        <>
+          <section className="employee_container">
+            <div className="employee_section">
+              <h2 className="employee_title">General Information</h2>
+              <GeneralQuestionFrame question='Date: ' input={<SubmitDate date={date} onDateChange={setDate} minwidth={minwidth}/>}/>
+              <GeneralQuestionFrame question='Name: ' input={<SubmitName name={name} onSubmit={setName} minwidth={minwidth}/>}/>
+              <GeneralQuestionFrame question='Branch: ' input={<Position position={position} onPositionChange={setPosition} minwidth={minwidth}/>}/>
+              <GeneralQuestionFrame question='Title: ' input={<Title title={title} onTitleChange={setTitle} minwidth={minwidth} isregister={false}/>}/>
+            </div>
+      
+            <div className="employee_section">
+              <h2 className="employee_title">Transaction Information</h2>
+              <AchievementQuestionFrame question='Time Deposit: ' unit={ten_thousand} input={<Achievement data={time_deposit} onDataChange={setTimeDeposit} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Live Deposit: ' unit={ten_thousand} input={<Achievement data={live_deposit} onDataChange={setLiveDeposit} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Single Insurance: ' unit={door} input={<Achievement data={single_insurance} onDataChange={setSingleInsurance} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Regular Insurance: ' unit={door} input={<Achievement data={regular_insurance} onDataChange={setRegularInsurance} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Finantial Product: ' unit={ten_thousand} input={<Achievement data={financial_product} onDataChange={setFinancialProduct} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='IPO Funding: ' unit={ten_thousand} input={<Achievement data={ipofund} onDataChange={setIPOFund} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Regular Funding: ' unit={deal} input={<Achievement data={fund} onDataChange={setFund} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='CCB Gold: ' unit={g} input={<Achievement data={ccb_gold} onDataChange={setCcbGold} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Gold: ' unit={door} input={<Achievement data={gold} onDataChange={setGold} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Credit Card: ' unit={door} input={<Achievement data={credit_card} onDataChange={setCreditCard} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Special Installment: ' unit={ten_thousand} input={<Achievement data={special_installment} onDataChange={setSpecialInstallment} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Personal Loan: ' unit={ten_thousand} input={<Achievement data={personal_loan} onDataChange={setPersonalLoan} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Mobile Bank Account: ' unit={door} input={<Achievement data={mobile_bank} onDataChange={setMobileBank} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Subway Account: ' unit={door} input={<Achievement data={subway} onDataChange={setSubway} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Pension: ' unit={door} input={<Achievement data={pension} onDataChange={setPension} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Save Money: ' unit={door} input={<Achievement data={save_money} onDataChange={setSaveMoney} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='CCB Live: ' unit={door} input={<Achievement data={ccb_live} onDataChange={setCcbLive} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='DCEP: ' unit={door} input={<Achievement data={dcep} onDataChange={setDCEP} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='CNPC: ' unit={door} input={<Achievement data={cnpc} onDataChange={setCNPC} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Public Loan: ' unit={door} input={<Achievement data={public_loan} onDataChange={setPublicLoan} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Company Account: ' unit={door} input={<Achievement data={company_account} onDataChange={setCompanyAccount} minwidth={achievement_minwidth}/>}/>
+            </div>
+          </section>
+      
+          {!alert_div ? <></> : <ConfirmBox checkbox={checkbox} onCheckboxChange={setCheckbox}/>}
+      
+          <div className="submit_btn_container">
+            <button className="main_button submit_btn" onClick={handleSubmit}>Submit</button>
+          </div>
+        </>
+      )
+      
 }
 
 export default Employee;

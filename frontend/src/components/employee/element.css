@@ -1,0 +1,121 @@
+.employee_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 60px;
+    flex-wrap: wrap;
+  }
+  
+  .employee_section {
+    flex: 1;
+    min-width: 350px;
+    max-width: 600px;
+  }
+  
+  .employee_title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #1D1B20;
+    text-align: left;
+  }
+  
+  .submit_btn_container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+
+ 
+  
+  body {
+    background-color: #fdfdfd;
+  }
+  
+  
+  .employee_section {
+    background-color: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  }
+  
+  
+  .employee_title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #1D1B20;
+    text-align: left;
+    border-left: 6px solid #6750A4;
+    padding-left: 12px;
+  }
+  
+  
+  .submit_btn {
+    width: 240px;
+    height: 56px;
+    background-color: #6750A4;
+    border-radius: 999px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3);
+    transition: background-color 0.2s ease;
+  }
+  
+  .submit_btn:hover {
+    background-color: #5a4592;
+  }
+  
+  
+  .styled_input_wrapper {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  
+  .styled_input {
+    width: 100%;
+    padding: 16px 48px 16px 12px;
+    border: 2px solid #6750A4;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .styled_input:focus {
+    border-color: #4f3c90;
+  }
+  
+  .styled_label {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    background: white;
+    color: #6750A4;
+    padding: 0 6px;
+    font-size: 14px;
+  }
+  
+  .clear_btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6750A4;
+    font-size: 18px;
+  }
+  
+
+  .submit_btn_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 60px; 
+  }

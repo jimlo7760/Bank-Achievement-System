@@ -98,18 +98,31 @@ const StyledInput = styled('input')(
   width: 4rem;
   text-align: center;
 
+  // &:hover {
+  //   border-color: ${blue[400]};
+  // }
+
+  // &:focus {
+  //   border-color: ${blue[400]};
+  //   box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? blue[700] : blue[200]};
+  // }
+
+  // &:focus-visible {
+  //   outline: 0;
+  // }
+  border: 2px solid #6750A4;
+
   &:hover {
-    border-color: ${blue[400]};
+    border-color: #4f3c90;
   }
 
   &:focus {
-    border-color: ${blue[400]};
-    box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? blue[700] : blue[200]};
-  }
+    border-color: #4f3c90;
+    box-shadow: none;
+}
+border-radius: 10px;
 
-  &:focus-visible {
-    outline: 0;
-  }
+
 `,
 );
 
@@ -121,9 +134,9 @@ const StyledButton = styled('button')(
   line-height: 1.5;
   border: 1px solid;
   border-radius: 999px;
-  border-color: ${theme.palette.mode === 'dark' ? grey[800] : grey[200]};
-  background: ${theme.palette.mode === 'dark' ? grey[900] : grey[50]};
-  color: ${theme.palette.mode === 'dark' ? grey[200] : grey[900]};
+  // border-color: ${theme.palette.mode === 'dark' ? grey[800] : grey[200]};
+  // background: ${theme.palette.mode === 'dark' ? grey[900] : grey[50]};
+  // color: ${theme.palette.mode === 'dark' ? grey[200] : grey[900]};
   width: 32px;
   height: 32px;
   display: flex;
@@ -134,12 +147,23 @@ const StyledButton = styled('button')(
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 120ms;
 
+  // &:hover {
+  //   cursor: pointer;
+  //   background: ${theme.palette.mode === 'dark' ? blue[700] : blue[500]};
+  //   border-color: ${theme.palette.mode === 'dark' ? blue[500] : blue[400]};
+  //   color: ${grey[50]};
+  // }
+  border-color: #6750A4;
+  background: #f6f0fd;
+  color: #4f3c90;
+
   &:hover {
     cursor: pointer;
-    background: ${theme.palette.mode === 'dark' ? blue[700] : blue[500]};
-    border-color: ${theme.palette.mode === 'dark' ? blue[500] : blue[400]};
-    color: ${grey[50]};
+    background: #e3d7f8;
+    border-color: #4f3c90;
+    color: white;
   }
+
 
   &:focus-visible {
     outline: 0;

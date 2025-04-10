@@ -48,11 +48,90 @@ function DataTable(props) {
 
     return ( 
         <div style={{ height: 550 }}>
-            <GeneralQuestionFrame type='admin' question='Start Date' input={<SubmitDate date={min_date} onDateChange={setMinDate} minwidth={min_wdith} />} />
-            <GeneralQuestionFrame type='admin' question='End Date' input={<SubmitDate date={max_date} onDateChange={setMaxDate} minwidth={min_wdith} />} />
+            {/* <GeneralQuestionFrame type='admin' question='Start Date' input={<SubmitDate date={min_date} onDateChange={setMinDate} minwidth={min_wdith} />} />
+            <GeneralQuestionFrame type='admin' question='End Date' input={<SubmitDate date={max_date} onDateChange={setMaxDate} minwidth={min_wdith} />} /> */}
             <DataGrid
                 rows={rows}
                 columns={columns}
+                sx={{
+                 
+                    '& .MuiDataGrid-columnHeaders': {
+                      backgroundColor: '#f6f0fd',
+                      color: '#4f3c90',
+                      fontWeight: 'bold',
+                    },
+                
+                    '& .MuiDataGrid-toolbarContainer .MuiButtonBase-root': {
+                      color: '#4f3c90',
+                    },
+                
+                    
+                    '& .MuiDataGrid-panel .MuiTypography-root': {
+                      color: '#4f3c90',
+                    },
+                
+                    
+                    '& .MuiDataGrid-panel .MuiInputBase-root': {
+                      color: '#4f3c90',
+                    },
+                
+                   
+                    '& .MuiDataGrid-panel .MuiInput-underline:before': {
+                      borderBottomColor: '#4f3c90',
+                    },
+                    '& .MuiDataGrid-panel .MuiInput-underline:after': {
+                      borderBottomColor: '#4f3c90',
+                    },
+                
+                   
+                    '& .MuiSwitch-switchBase.Mui-checked': {
+                      color: '#4f3c90',
+                    },
+                    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                      backgroundColor: '#b89de9',
+                    },
+                
+                   
+                    '& .MuiDataGrid-panel .MuiButtonBase-root': {
+                      color: '#4f3c90',
+                    },
+                    
+                    '& .MuiDataGrid-panel': {
+                        backgroundColor: '#fff',
+                    },
+
+                
+                    '& .MuiDataGrid-panel .MuiInputLabel-root': {
+                        color: '#4f3c90',
+                    },
+
+                   
+                    '& .MuiDataGrid-panel .MuiInputBase-root': {
+                        color: '#4f3c90',
+                    },
+
+                
+                    '& .MuiDataGrid-panel .MuiInput-underline:before': {
+                        borderBottomColor: '#4f3c90',
+                    },
+                    '& .MuiDataGrid-panel .MuiInput-underline:after': {
+                        borderBottomColor: '#4f3c90',
+                    },
+
+                   
+                    '& .MuiDataGrid-panel .MuiSwitch-switchBase.Mui-checked': {
+                        color: '#4f3c90',
+                    },
+                    '& .MuiDataGrid-panel .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                        backgroundColor: '#b89de9',
+                    },
+
+                   
+                    '& .MuiDataGrid-panel .MuiButtonBase-root': {
+                        color: '#4f3c90',
+                    },
+                  }}
+                
                 initialState={{
                     pagination: {
                         paginationModel: { page: 0, pageSize: 10 },

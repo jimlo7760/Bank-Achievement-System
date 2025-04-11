@@ -15,20 +15,21 @@ function AppRouter() {
                 <Route path="/" element={<SignIn login_title={login_title} setLoginTitle={setLoginTitle}/>}/>
 
                 {/*The following portion is for login/sign-up - comment out if you want to preview the employee or admin dashboard*/}
-                <Route path="/admin" element={
-                    login_title === 'admin' ? <Admin/> : <Navigate to="/" />
-                } />
-                <Route path="/employee" element={
-                    login_title === 'employee' ? <Employee/> : <Navigate to="/" />
-                } />
+                {/*<Route path="/admin" element={*/}
+                {/*    login_title === 'admin' ? <Admin/> : <Navigate to="/" />*/}
+                {/*} />*/}
+                {/*<Route path="/employee" element={*/}
+                {/*    login_title === 'employee' ? <Employee/> : <Navigate to="/" />*/}
+                {/*} />*/}
 
 
                 {/* The following routes are for the admin pages after login - uncomment the following line and comment the login/sign-up portion to preview the admin dashboard*/}
                 {/* <Route path="/admin" element={<Admin/>} />*/}
 
                 {/* The following route is for the employee pages after login - uncomment the following line and comment the login/sign-up and admin portion to preview the employee dashboard*/}
-                {/*<Route path="/employee" element={<Employee/>} /> */}
-                <Route path="*" element={<Navigate to="/" />} />
+                <Route path="/employee" element={<Employee/>} />
+
+                {/*<Route path="*" element={<Navigate to="/" />} />*/}
 
             </Routes>
         </BrowserRouter>

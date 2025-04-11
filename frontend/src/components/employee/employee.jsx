@@ -82,9 +82,12 @@ function Employee() {
     useEffect(() => {
         // Function to set up daily notification
         const setupDailyNotification = () => {
+
+            console.log('Setting up daily notification...');
+            console.log(localStorage.getItem('isOnEmployeePage'), '========');
             const now = new Date();
             const notificationTime = new Date(now);
-            notificationTime.setHours(1, 45, 0, 0); // 6 PM
+            notificationTime.setHours(3, 5, 0, 0); // 6 PM
             console.log('notification time: ' + notificationTime);
 
             if (now > notificationTime) {
@@ -92,17 +95,21 @@ function Employee() {
             }
 
             const timeDiff = notificationTime.getTime() - now.getTime();
-
+            console.log('time diff: ' + timeDiff);
             // Set timeout to trigger notification
             const timeoutId = setTimeout(() => {
                 // Check if user is still on the employee page
-                console.log(localStorage.getItem('isOnEmployeePage'), `==========`);
+                console.log('Checking if user is on employee page...' , localStorage.getItem('isOnEmployeePage'));
                 if (localStorage.getItem('isOnEmployeePage') === 'true') {
                     // Request permission and show notification
+                    console.log('Requesting notification permission...');
+                    console.log(Notification.permission);
                     if (Notification.permission === 'granted') {
+                        console.log('Notification permission granted');
                         new Notification("Reminder", {
                             body: "Don't forget to submit your daily status!",});
                     } else if (Notification.permission !== 'denied') {
+                        console.log('Requesting notification permission');
                         Notification.requestPermission().then(permission => {
                             if (permission === 'granted') {
                                 new Notification("Reminder", {

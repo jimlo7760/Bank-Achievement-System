@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { zhCN } from '@mui/x-date-pickers/locales';
 import 'dayjs/locale/zh-cn';
 
 import '../../App.css';

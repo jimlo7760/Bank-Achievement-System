@@ -64,13 +64,13 @@ A web-based achievement system for banking activities that gamifies financial ta
 
 6. Open your browser and navigate to `http://localhost:3000` or `http://localhost:8080` (Depending the port displayed on your terminal) to view the application.
 
-**Note**: For security reasons, the local development environment cannot access the production database. Use the **live demo** for full functionality.
+**Note**: For security reasons, the local development environment cannot access the production database. Use the **live demo** for full functionality. 
 
-### If you want to preview a page specifically:
+### If you want to preview a page specifically: 
 Following the portion division on `frontend/src/components/AppRouter.jsx`, you can navigate to specific pages by commenting/uncommenting the portion.\
 (e.g By default, it directs to the sign-up/login page, if you want to preview the admin dashboard, you can comment out the login/sign-up portion (as well as the employee portion) and uncomment the admin dashboard portion in the `AppRouter.jsx` file.)\
 Same reason for if you want to preview the employee dashboard or any other pages. \
-**Note**: Whenever you changed the `AppRouter.jsx` file, you will need to restart the server by following commands from step 3.
+**Note**: Whenever you changed the `AppRouter.jsx` file, you will need to restart the server by following commands from step 3. 
 
 ## Admin Access
 
@@ -102,7 +102,7 @@ The application provides several API endpoints for various functionalities:
 
 The application is deployed on Microsoft Azure at [https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//](https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//)
 
-**Note**: Since we store cookie and session once you login. Please try to use incognito mode or clear your browser cache if you want to login another user or test different accounts.
+**Note**: Since we store cookie and session once you login. Please try to use incognito mode or clear your browser cache if you want to login another user or test different accounts. 
 
 
 ## Local Development Limitations

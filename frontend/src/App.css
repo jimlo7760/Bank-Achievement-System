@@ -1,0 +1,219 @@
+.fx_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.fx_50 {
+    width: 50%;
+}
+
+.question_p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0.7rem;
+}
+
+.question_unit {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 1rem;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 510;
+    margin-top: 0.7rem;
+}
+
+.ml_3 {
+    margin-left: 3rem;
+}
+.ml_1 {
+    margin-left: 1rem;
+}
+
+.flex_center {
+    justify-content: center;
+}
+
+.w_25 {
+    width: 25%;
+}
+.w_70 {
+    width: 70%;
+}
+
+.w_30 {
+    width: 30%;
+}
+
+.w_65 {
+    width: 65%;
+}
+
+.w_35 {
+    width: 35%;
+}
+
+.w_60 {
+    width: 60%;
+}
+
+.w_40 {
+    width: 40%;
+}
+.w_10 {
+    width: 10%;
+}
+
+.w_90 {
+    width: 90%;
+}
+
+.w_20 {
+    width: 20%;
+}
+
+.w_80 {
+    width: 80%;
+}
+.w_500px {
+    width: 500px;
+}
+
+.main_button {
+    width: 100%;
+    height: 60px;
+    background-color: #6750A4 !important; 
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .main_button:hover {
+    background-color: #5a4592 !important; 
+  }
+
+
+  .styled_input_wrapper {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  
+  .styled_label {
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background-color: #f6f0fd;
+    padding: 0 6px;
+    font-size: 14px;
+    color: #6750A4;
+    font-weight: 500;
+  }
+  
+  .styled_input {
+    width: 100%;
+    padding: 16px 40px 16px 16px;
+    border: 2px solid #6750A4;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    color: #1D1B20;
+    background-color: white;
+  }
+  
+  .styled_input:focus {
+    border-color: #4f378b;
+  }
+  
+  .clear_btn {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid #6750A4;
+    background-color: white;
+    color: #6750A4;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .clear_btn:hover {
+    background-color: #f0e9fc;
+  }
+
+  .signup_btn_container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 16px;
+  }
+  
+  .signup_btn {
+    width: 180px;
+    height: 55px;
+    border-radius: 999px;
+  }
+  .signup_grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .signup_left,
+  .signup_right {
+    flex: 1;
+    min-width: 300px;
+  }
+
+.styled_input_wrapper select.styled_input {
+    -webkit-appearance: none;  /* Safari */
+    -moz-appearance: none;     /* Firefox */
+    appearance: none;         
+    background-color: white;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%236750A4'%20d='M2%200L0%202h4L2%200zM2%205l2-2H0l2%202z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 400;
+  }
+  
+
+.switch-tab .nav-link {
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    color: #6750A4;
+    background-color: #f6f0fd;
+    transition: all 0.2s ease;
+  }
+  
+  .switch-tab .nav-link:hover {
+    background-color: #e4d7fa;
+  }
+  
+  .switch-tab .nav-link.active {
+    background-color: #6750A4 !important;
+    color: white !important;
+  }
+  

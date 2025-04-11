@@ -23,10 +23,25 @@ function Title(props) {
                 value={title}
                 label="title"
                 onChange={handleChange}
+                fullWidth
+                sx={{
+                  borderRadius: '10px',
+                  '& .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#6750A4',
+                    borderWidth: '2px',
+                  },
+                  '&:hover .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#4f3c90',
+                  },
+                  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#4f3c90',
+                  },
+                }}
                 >
                     <MenuItem value={'ClientManager'}>Client Manager</MenuItem>
                     <MenuItem value={'CustomerServiceManager'}>Customer Service Manager</MenuItem>
                 </Select>
+                
             </FormControl>
         </Box>
      );

@@ -96,19 +96,17 @@ function Employee() {
             // Set timeout to trigger notification
             const timeoutId = setTimeout(() => {
                 // Check if user is still on the employee page
+                console.log(localStorage.getItem('isOnEmployeePage'), `==========`);
                 if (localStorage.getItem('isOnEmployeePage') === 'true') {
                     // Request permission and show notification
                     if (Notification.permission === 'granted') {
                         new Notification("Reminder", {
-                            body: "Don't forget to submit your daily status!",
-                            icon: '/vite.svg' // Path to your notification icon
-                        });
+                            body: "Don't forget to submit your daily status!",});
                     } else if (Notification.permission !== 'denied') {
                         Notification.requestPermission().then(permission => {
                             if (permission === 'granted') {
                                 new Notification("Reminder", {
                                     body: "Don't forget to submit your daily status!",
-                                    icon: '/vite.svg' // Path to your notification icon
                                 });
                             }
                         });

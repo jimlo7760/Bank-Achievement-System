@@ -80,8 +80,7 @@ function Employee() {
     }, []);
 
     const handleSubmit = async () => {
-        date = date.subtract(1, 'day')
-        console.log('submit');
+        console.log('submit date: ' + date.format('YYYY-MM-DD'));
         if (!checkbox) {
             var check_data = await axios.post('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//data/check', {
                 date: date,

@@ -87,7 +87,7 @@ function Employee() {
             console.log(localStorage.getItem('isOnEmployeePage'), '========');
             const now = new Date();
             const notificationTime = new Date(now);
-            notificationTime.setHours(3, 5, 0, 0); // 6 PM
+            notificationTime.setHours(18, 0, 0, 0); // 6 PM
             console.log('notification time: ' + notificationTime);
 
             if (now > notificationTime) {

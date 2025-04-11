@@ -38,8 +38,11 @@ function Title(props) {
                   },
                 }}
                 >
-                    <MenuItem value={'ClientManager'}>Client Manager</MenuItem>
-                    <MenuItem value={'CustomerServiceManager'}>Customer Service Manager</MenuItem>
+                    {/* <MenuItem value={'ClientManager'}>Client Manager</MenuItem>
+                    <MenuItem value={'CustomerServiceManager'}>Customer Service Manager</MenuItem> */}
+                    <MenuItem value={'Manager'}>Manager</MenuItem>
+                    <MenuItem value={'Teller'}>Teller</MenuItem>
+                    <MenuItem value={'Clerk'}>Clerk</MenuItem>
                 </Select>
                 
             </FormControl>

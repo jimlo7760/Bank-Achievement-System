@@ -201,20 +201,6 @@ function Employee() {
             withCredentials: true
         }).then((response) => {
             if (response.data.result === "OK") {
-                const total_deposit = time_deposit + live_deposit + special_installment + save_money;
-                const total_gold = ccb_gold + gold;
-                const total_insurance = single_insurance + regular_insurance;
-                const total_fund = financial_product + ipofund + fund;
-
-                const summary = `
-                Task Notification:
-
-                Deposit Total: ${total_deposit} (Thousands)
-                Gold Total: ${total_gold} (Clients/Grams)
-                Insurance Total: ${total_insurance} (Clients)
-                Fund / IPO / Product: ${total_fund} (Thousands)
-                `;
-                alert(summary);
                 alert('Submit Successful');
             } else {
                 alert(response.data.message);
@@ -240,7 +226,7 @@ function Employee() {
                 <AchievementQuestionFrame question='Live Deposit: ' unit={ten_thousand} input={<Achievement data={live_deposit} onDataChange={setLiveDeposit} minwidth={achievement_minwidth}/>}/>
                 <AchievementQuestionFrame question='Single Insurance: ' unit={door} input={<Achievement data={single_insurance} onDataChange={setSingleInsurance} minwidth={achievement_minwidth}/>}/>
                 <AchievementQuestionFrame question='Regular Insurance: ' unit={door} input={<Achievement data={regular_insurance} onDataChange={setRegularInsurance} minwidth={achievement_minwidth}/>}/>                
-                <AchievementQuestionFrame question='Finantial Product: ' unit={ten_thousand} input={<Achievement data={financial_product} onDataChange={setFinancialProduct} minwidth={achievement_minwidth}/>}/>
+                <AchievementQuestionFrame question='Financial Product: ' unit={ten_thousand} input={<Achievement data={financial_product} onDataChange={setFinancialProduct} minwidth={achievement_minwidth}/>}/>
                 <AchievementQuestionFrame question='IPO Funding: ' unit={ten_thousand} input={<Achievement data={ipofund} onDataChange={setIPOFund} minwidth={achievement_minwidth}/>}/>
                 <AchievementQuestionFrame question='Regular Funding: ' unit={deal} input={<Achievement data={fund} onDataChange={setFund} minwidth={achievement_minwidth}/>}/>
                 <AchievementQuestionFrame question='CCB Gold: ' unit={g} input={<Achievement data={ccb_gold} onDataChange={setCcbGold} minwidth={achievement_minwidth}/>}/>
@@ -281,7 +267,7 @@ function Employee() {
               <AchievementQuestionFrame question='Live Deposit: ' unit={ten_thousand} input={<Achievement data={live_deposit} onDataChange={setLiveDeposit} minwidth={achievement_minwidth}/>}/>
               <AchievementQuestionFrame question='Single Insurance: ' unit={door} input={<Achievement data={single_insurance} onDataChange={setSingleInsurance} minwidth={achievement_minwidth}/>}/>
               <AchievementQuestionFrame question='Regular Insurance: ' unit={door} input={<Achievement data={regular_insurance} onDataChange={setRegularInsurance} minwidth={achievement_minwidth}/>}/>
-              <AchievementQuestionFrame question='Finantial Product: ' unit={ten_thousand} input={<Achievement data={financial_product} onDataChange={setFinancialProduct} minwidth={achievement_minwidth}/>}/>
+              <AchievementQuestionFrame question='Financial Product: ' unit={ten_thousand} input={<Achievement data={financial_product} onDataChange={setFinancialProduct} minwidth={achievement_minwidth}/>}/>
               <AchievementQuestionFrame question='IPO Funding: ' unit={ten_thousand} input={<Achievement data={ipofund} onDataChange={setIPOFund} minwidth={achievement_minwidth}/>}/>
               <AchievementQuestionFrame question='Regular Funding: ' unit={deal} input={<Achievement data={fund} onDataChange={setFund} minwidth={achievement_minwidth}/>}/>
               <AchievementQuestionFrame question='CCB Gold: ' unit={g} input={<Achievement data={ccb_gold} onDataChange={setCcbGold} minwidth={achievement_minwidth}/>}/>

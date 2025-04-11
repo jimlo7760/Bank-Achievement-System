@@ -42,6 +42,7 @@ function Position(props) {
                 >
                     <MenuItem value={'Troy'}>Troy</MenuItem>
                     <MenuItem value={'Albany'}>Albany</MenuItem>
+                    <MenuItem value={'NYC'}>NYC</MenuItem>
                 </Select>
             </FormControl>
         </Box>

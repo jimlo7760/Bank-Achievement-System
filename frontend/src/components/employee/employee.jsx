@@ -65,7 +65,7 @@ function Employee() {
 
     useEffect(() => {  // get user info
         console.log('employee page');
-        axios.get('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//user', {
+        axios.get('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net/user', {
             withCredentials: true
         }).then((response) => {
             console.log('trying to get user info');
@@ -81,8 +81,9 @@ function Employee() {
 
     const handleSubmit = async () => {
         console.log('submit date: ' + date.format('YYYY-MM-DD'));
+        console.log('check: ' + dayjs(date).format('YYYY-MM-DD'));
         if (!checkbox) {
-            var check_data = await axios.post('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//data/check', {
+            var check_data = await axios.post('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net/data/check', {
                 date: date,
                 name: name,
                 position: position,
@@ -169,7 +170,8 @@ function Employee() {
             alert('Company Account cannot be negative!');
             return;
         }
-        axios.post('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//data', {
+        console.log('just before submit data: ' + dayjs(date).format('YYYY-MM-DD'));
+        axios.post('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net/data', {
             date: date,
             name: name,
             position: position,

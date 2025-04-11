@@ -79,63 +79,63 @@ function Employee() {
         console.log('got user info');
     }, []);
 
-    useEffect(() => {
-        // Function to set up daily notification
-        const setupDailyNotification = () => {
-
-            console.log('Setting up daily notification...');
-            console.log(localStorage.getItem('isOnEmployeePage'), '========');
-            const now = new Date();
-            const notificationTime = new Date(now);
-            notificationTime.setHours(18, 0, 0, 0); // 6 PM
-            console.log('notification time: ' + notificationTime);
-
-            if (now > notificationTime) {
-                notificationTime.setDate(now.getDate() + 1); // Set to tomorrow if it's already past 6 PM
-            }
-
-            const timeDiff = notificationTime.getTime() - now.getTime();
-            console.log('time diff: ' + timeDiff);
-            // Set timeout to trigger notification
-            const timeoutId = setTimeout(() => {
-                // Check if user is still on the employee page
-                console.log('Checking if user is on employee page...' , localStorage.getItem('isOnEmployeePage'));
-                if (localStorage.getItem('isOnEmployeePage') === 'true') {
-                    // Request permission and show notification
-                    console.log('Requesting notification permission...');
-                    console.log(Notification.permission);
-                    if (Notification.permission === 'granted') {
-                        console.log('Notification permission granted');
-                        new Notification("Reminder", {
-                            body: "Don't forget to submit your daily status!",});
-                    } else if (Notification.permission !== 'denied') {
-                        console.log('Requesting notification permission');
-                        Notification.requestPermission().then(permission => {
-                            if (permission === 'granted') {
-                                new Notification("Reminder", {
-                                    body: "Don't forget to submit your daily status!",
-                                });
-                            }
-                        });
-                    }
-                }
-            }, timeDiff);
-
-            return () => clearTimeout(timeoutId); // Clear timeout if component unmounts
-        };
-
-        // Set item to indicate user is on the employee page
-        localStorage.setItem('isOnEmployeePage', 'true');
-
-        // Set up the daily notification
-        const cleanup = setupDailyNotification();
-
-        // Clean up when component unmounts
-        return () => {
-            localStorage.removeItem('isOnEmployeePage');
-            cleanup();
-        };
-    }, []);
+    // useEffect(() => {
+    //     // Function to set up daily notification
+    //     const setupDailyNotification = () => {
+    //
+    //         console.log('Setting up daily notification...');
+    //         console.log(localStorage.getItem('isOnEmployeePage'), '========');
+    //         const now = new Date();
+    //         const notificationTime = new Date(now);
+    //         notificationTime.setHours(18, 0, 0, 0); // 6 PM
+    //         console.log('notification time: ' + notificationTime);
+    //
+    //         if (now > notificationTime) {
+    //             notificationTime.setDate(now.getDate() + 1); // Set to tomorrow if it's already past 6 PM
+    //         }
+    //
+    //         const timeDiff = notificationTime.getTime() - now.getTime();
+    //         console.log('time diff: ' + timeDiff);
+    //         // Set timeout to trigger notification
+    //         const timeoutId = setTimeout(() => {
+    //             // Check if user is still on the employee page
+    //             console.log('Checking if user is on employee page...' , localStorage.getItem('isOnEmployeePage'));
+    //             if (localStorage.getItem('isOnEmployeePage') === 'true') {
+    //                 // Request permission and show notification
+    //                 console.log('Requesting notification permission...');
+    //                 console.log(Notification.permission);
+    //                 if (Notification.permission === 'granted') {
+    //                     console.log('Notification permission granted');
+    //                     new Notification("Reminder", {
+    //                         body: "Don't forget to submit your daily status!",});
+    //                 } else if (Notification.permission !== 'denied') {
+    //                     console.log('Requesting notification permission');
+    //                     Notification.requestPermission().then(permission => {
+    //                         if (permission === 'granted') {
+    //                             new Notification("Reminder", {
+    //                                 body: "Don't forget to submit your daily status!",
+    //                             });
+    //                         }
+    //                     });
+    //                 }
+    //             }
+    //         }, timeDiff);
+    //
+    //         return () => clearTimeout(timeoutId); // Clear timeout if component unmounts
+    //     };
+    //
+    //     // Set item to indicate user is on the employee page
+    //     localStorage.setItem('isOnEmployeePage', 'true');
+    //
+    //     // Set up the daily notification
+    //     const cleanup = setupDailyNotification();
+    //
+    //     // Clean up when component unmounts
+    //     return () => {
+    //         localStorage.removeItem('isOnEmployeePage');
+    //         cleanup();
+    //     };
+    // }, []);
 
     const handleSubmit = async () => {
         console.log('submit date: ' + date.format('YYYY-MM-DD'));

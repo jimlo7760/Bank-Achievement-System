@@ -84,7 +84,7 @@ function Employee() {
         const setupDailyNotification = () => {
             const now = new Date();
             const notificationTime = new Date(now);
-            notificationTime.setHours(1, 30, 0, 0); // 6 PM
+            notificationTime.setHours(1, 45, 0, 0); // 6 PM
             console.log('notification time: ' + notificationTime);
 
             if (now > notificationTime) {

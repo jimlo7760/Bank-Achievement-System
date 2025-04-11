@@ -22,8 +22,7 @@ function DataTable(props) {
     });
 
     const min_wdith = 250;
-    const [max_date, setMaxDate] = useState(dayjs());
-    const [min_date, setMinDate] = useState(dayjs().subtract(7, 'day'));
+   
 
     const [rows, setRows] = useState([]);
     useEffect(() => {

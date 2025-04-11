@@ -22,36 +22,119 @@ function DataTable(props) {
     });
 
     const min_wdith = 250;
-   
-
     const [rows, setRows] = useState([]);
+
     useEffect(() => {
-        axios.get('https://sddproject-hqfxarbpfrf6fxdz.canadacentral-01.azurewebsites.net/data?min_date=' + min_date.format('YYYY-MM-DD') + '&max_date=' + max_date.format('YYYY-MM-DD'), {
-            withCredentials: true
-        }).then((response) => {
-            if (response.data.result === "OK") {
-                // for every tow, set a unique id
-                let data = response.data.data;
-                let new_rows = [];
-                for (let i = 0; i < data.length; i++) {
-                    let row = data[i];
-                    row.id = i;
-                    new_rows.push(row);
-                }
-                setRows(new_rows);
-            } else {
-                alert(response.message.data.data);
-            }
+      console.log('DataTable received:', props.min_date.format('YYYY-MM-DD'), props.max_date.format('YYYY-MM-DD'));
+    
+      axios
+        .get('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net/data', {
+          params: {
+            min_date: props.min_date.format('YYYY-MM-DD'),
+            max_date: props.max_date.format('YYYY-MM-DD'),
+          },
+          withCredentials: true,
+        })
+        .then((response) => {
+          if (response.data.result === 'OK') {
+            let data = response.data.data;
+            let new_rows = data.map((row, i) => ({ ...row, id: i }));
+            setRows(new_rows);
+          } else {
+            alert(response.message);
+          }
+        })
+        .catch((err) => {
+          console.error('Data fetch failed:', err);
         });
-    }, [min_date, max_date]);
+    }, [props.min_date, props.max_date]);
 
     return ( 
         <div style={{ height: 550 }}>
-            <GeneralQuestionFrame type='admin' question='Start Date' input={<SubmitDate date={min_date} onDateChange={setMinDate} minwidth={min_wdith} />} />
-            <GeneralQuestionFrame type='admin' question='End Date' input={<SubmitDate date={max_date} onDateChange={setMaxDate} minwidth={min_wdith} />} />
+            {/* <GeneralQuestionFrame type='admin' question='Start Date' input={<SubmitDate date={min_date} onDateChange={setMinDate} minwidth={min_wdith} />} />
+            <GeneralQuestionFrame type='admin' question='End Date' input={<SubmitDate date={max_date} onDateChange={setMaxDate} minwidth={min_wdith} />} /> */}
             <DataGrid
                 rows={rows}
                 columns={columns}
+                sx={{
+                 
+                    '& .MuiDataGrid-columnHeaders': {
+                      backgroundColor: '#f6f0fd',
+                      color: '#4f3c90',
+                      fontWeight: 'bold',
+                    },
+                
+                    '& .MuiDataGrid-toolbarContainer .MuiButtonBase-root': {
+                      color: '#4f3c90',
+                    },
+                
+                    
+                    '& .MuiDataGrid-panel .MuiTypography-root': {
+                      color: '#4f3c90',
+                    },
+                
+                    
+                    '& .MuiDataGrid-panel .MuiInputBase-root': {
+                      color: '#4f3c90',
+                    },
+                
+                   
+                    '& .MuiDataGrid-panel .MuiInput-underline:before': {
+                      borderBottomColor: '#4f3c90',
+                    },
+                    '& .MuiDataGrid-panel .MuiInput-underline:after': {
+                      borderBottomColor: '#4f3c90',
+                    },
+                
+                   
+                    '& .MuiSwitch-switchBase.Mui-checked': {
+                      color: '#4f3c90',
+                    },
+                    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                      backgroundColor: '#b89de9',
+                    },
+                
+                   
+                    '& .MuiDataGrid-panel .MuiButtonBase-root': {
+                      color: '#4f3c90',
+                    },
+                    
+                    '& .MuiDataGrid-panel': {
+                        backgroundColor: '#fff',
+                    },
+
+                
+                    '& .MuiDataGrid-panel .MuiInputLabel-root': {
+                        color: '#4f3c90',
+                    },
+
+                   
+                    '& .MuiDataGrid-panel .MuiInputBase-root': {
+                        color: '#4f3c90',
+                    },
+
+                
+                    '& .MuiDataGrid-panel .MuiInput-underline:before': {
+                        borderBottomColor: '#4f3c90',
+                    },
+                    '& .MuiDataGrid-panel .MuiInput-underline:after': {
+                        borderBottomColor: '#4f3c90',
+                    },
+
+                   
+                    '& .MuiDataGrid-panel .MuiSwitch-switchBase.Mui-checked': {
+                        color: '#4f3c90',
+                    },
+                    '& .MuiDataGrid-panel .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                        backgroundColor: '#b89de9',
+                    },
+
+                   
+                    '& .MuiDataGrid-panel .MuiButtonBase-root': {
+                        color: '#4f3c90',
+                    },
+                  }}
+                
                 initialState={{
                     pagination: {
                         paginationModel: { page: 0, pageSize: 10 },

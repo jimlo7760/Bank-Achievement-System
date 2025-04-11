@@ -104,6 +104,71 @@ function Employee() {
                 return;
             }
         }
+        // check if there is any negative value in the data
+        if (time_deposit < 0) {
+            alert('Time Deposit cannot be negative!');
+            return;
+        } else if (live_deposit < 0) {
+            alert('Live Deposit cannot be negative!');
+            return;
+        } else if (single_insurance < 0) {
+            alert('Single Insurance cannot be negative!');
+            return;
+        } else if (regular_insurance < 0) {
+            alert('Regular Insurance cannot be negative!');
+            return;
+        } else if (financial_product < 0) {
+            alert('Financial Product cannot be negative!');
+            return;
+        } else if (ipofund < 0) {
+            alert('IPO Fund cannot be negative!');
+            return;
+        } else if (fund < 0) {
+            alert('Fund cannot be negative!');
+            return;
+        } else if (ccb_gold < 0) {
+            alert('CCB Gold cannot be negative!');
+            return;
+        } else if (gold < 0) {
+            alert('Gold cannot be negative!');
+            return;
+        } else if (credit_card < 0) {
+            alert('Credit Card cannot be negative!');
+            return;
+        } else if (special_installment < 0) {
+            alert('Special Installment cannot be negative!');
+            return;
+        } else if (personal_loan < 0) {
+            alert('Personal Loan cannot be negative!');
+            return;
+        } else if (mobile_bank < 0) {
+            alert('Mobile Bank cannot be negative!');
+            return;
+        } else if (subway < 0) {
+            alert('Subway cannot be negative!');
+            return;
+        } else if (pension < 0) {
+            alert('Pension cannot be negative!');
+            return;
+        } else if (save_money < 0) {
+            alert('Save Money cannot be negative!');
+            return;
+        } else if (ccb_live < 0) {
+            alert('CCB Live cannot be negative!');
+            return;
+        } else if (dcep < 0) {
+            alert('DCEP cannot be negative!');
+            return;
+        } else if (cnpc < 0) {
+            alert('CNPC cannot be negative!');
+            return;
+        } else if (public_loan < 0) {
+            alert('Public Loan cannot be negative!');
+            return;
+        } else if (company_account < 0) {
+            alert('Company Account cannot be negative!');
+            return;
+        }
         axios.post('https://sdd-test-project-cma8b0b7ayc4duhx.canadacentral-01.azurewebsites.net//data', {
             date: date,
             name: name,

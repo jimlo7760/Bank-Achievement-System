@@ -201,6 +201,20 @@ function Employee() {
             withCredentials: true
         }).then((response) => {
             if (response.data.result === "OK") {
+                const total_deposit = time_deposit + live_deposit + special_installment + save_money;
+                const total_gold = ccb_gold + gold;
+                const total_insurance = single_insurance + regular_insurance;
+                const total_fund = financial_product + ipofund + fund;
+
+                const summary = `
+                Task Notification:
+
+                Deposit Total: ${total_deposit} (Thousands)
+                Gold Total: ${total_gold} (Clients/Grams)
+                Insurance Total: ${total_insurance} (Clients)
+                Fund / IPO / Product: ${total_fund} (Thousands)
+                `;
+                alert(summary);
                 alert('Submit Successful');
             } else {
                 alert(response.data.message);

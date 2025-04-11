@@ -3,10 +3,13 @@ import './admin.css';
 
 import DataTable from './data_table';
 import { useEffect, useState } from 'react';
+import { Button } from '@mui/material';
+
 
 import dayjs from 'dayjs';
 import GeneralQuestionFrame from '../employee/general_question_frame';
 import SubmitDate from '../employee/SubmitDate';
+import BranchComparisonTable from './BranchComparisonTable';
 
 
 function Admin() {
@@ -15,6 +18,8 @@ function Admin() {
     const [max_date, setMaxDate] = useState(dayjs());
     const [min_date, setMinDate] = useState(dayjs().subtract(7, 'day'));
     const min_width = 250;
+    const [showBranchCompare, setShowBranchCompare] = useState(false);
+
 
     useEffect(() => {  // listen to window resize
         const handleResize = () => {
@@ -70,17 +75,45 @@ function Admin() {
                 />
                 </div>
 
-              
+                
                 <div style={{
-                flex: 3,
-                background: 'white',
-                padding: '24px',
-                borderRadius: '16px',
-                boxShadow: '0 4px 10px rgba(0,0,0,0.05)',
+                    flex: 3,
+                    background: 'white',
+                    padding: '24px',
+                    borderRadius: '16px',
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.05)',
                 }}>
-                <h1 className="title">Manager Page</h1>
-                <DataTable min_date={min_date} max_date={max_date} />
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <h1 className="title">Manager Page</h1>
+                        <Button
+                            variant="contained"
+                            sx={{
+                                backgroundColor: '#6750A4',
+                                borderRadius: '999px',
+                                paddingX: 4,
+                                paddingY: 1.5,
+                                fontWeight: 'bold',
+                                fontSize: '16px',
+                                textTransform: 'none',
+                                marginBottom: '16px',
+                                '&:hover': {
+                                backgroundColor: '#4f3c90',
+                                },
+                            }}
+                            onClick={() => setShowBranchCompare(!showBranchCompare)}
+                        >
+                            {showBranchCompare ? 'Back to Main Table' : 'Show Branch Comparison'}
+                        </Button>
+
+                    </div>
+                    
+                    {showBranchCompare ? (
+                        <BranchComparisonTable minDate={min_date} maxDate={max_date} />
+                    ) : (
+                        <DataTable min_date={min_date} max_date={max_date} />
+                    )}
                 </div>
+
             </section>
             </main>
 

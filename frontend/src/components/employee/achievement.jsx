@@ -35,8 +35,19 @@ function Achievement(props) {
         props.onDataChange(newValue);
         console.log('Achievement.jsx, value is: ', value);
     }
-    return ( 
+    return (
+      <>
         <NumberInput onChange={handleChange}/>
+        <div className='alert_popup' style={{ display: value < 0 ? 'block' : 'none' }}>
+          <div className='alert alert-danger' role='alert' style={{
+              color: 'red', fontSize: 'small', padding: '0.5rem', margin: '0', textAlign: 'center',
+              width: '100%', height: '100%', borderRadius: '0.25rem', border: '1px solid transparent',
+              backgroundColor: 'rgba(255, 0, 0, 0.1)'
+          }}>
+              Value cannot be negative!
+          </div>
+        </div>
+      </>
      );
 }
 

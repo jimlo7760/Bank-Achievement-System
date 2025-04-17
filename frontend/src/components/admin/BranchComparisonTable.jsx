@@ -15,7 +15,7 @@ function BranchComparisonTable({ minDate, maxDate }) {
       const data = res.data.data.map((item, index) => ({
         id: index,
         position: item.position,
-        score: item.score
+        score: Number(item.score)
       }));
       setRows(data);
     }).catch(err => console.error('Fetch error', err));
@@ -23,7 +23,7 @@ function BranchComparisonTable({ minDate, maxDate }) {
 
   const columns = [
     { field: 'position', headerName: 'Branch', flex: 1 },
-    { field: 'score', headerName: 'Score', flex: 1 },
+    { field: 'score', headerName: 'Score', flex: 1, type: 'number' },
   ];
   console.log("✅ BranchComparisonTable loaded with:", rows);
 

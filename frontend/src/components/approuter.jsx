@@ -23,10 +23,12 @@ function AppRouter() {
                 } />
 
 
-                {/* The following routes are for the admin pages after login - uncomment the following line and comment the login/sign-up portion to preview the admin dashboard*/}
+                {/* The following routes are for the admin pages after login - uncomment the following line
+                and comment the login/sign-up portion to preview the admin dashboard*/}
                 {/* <Route path="/admin" element={<Admin/>} />*/}
 
-                {/* The following route is for the employee pages after login - uncomment the following line and comment the login/sign-up and admin portion to preview the employee dashboard*/}
+                {/* The following route is for the employee pages after login - uncomment the following line
+                and comment the login/sign-up and admin portion to preview the employee dashboard*/}
                 {/*<Route path="/employee" element={<Employee/>} />*/}
 
                 <Route path="*" element={<Navigate to="/" />} />
